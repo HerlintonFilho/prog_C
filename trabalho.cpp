@@ -5,7 +5,7 @@
 #include <string.h>
 
 typedef struct produtos{
-	char nome[25];
+	char nome[50];
 	int quantidade;
 };
 
