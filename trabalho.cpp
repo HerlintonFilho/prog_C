@@ -12,6 +12,8 @@ typedef struct produtos{
 produtos produto;
 
 int cardapio();
+int consulta();
+int alterar();
 
 int main(){
 	setlocale(LC_ALL, "Portuguese");
@@ -28,6 +30,14 @@ int main(){
 	{
 		case 1:{
 			cardapio();
+			break;
+		}
+		case 2:{
+			alterar();
+			break;
+		}
+		case 3:{
+			consulta();
 			break;
 		}
 	}
@@ -108,5 +118,26 @@ int cardapio(){
 			return main();
 			break;
 		}
+	}
+}
+
+int alterar(){
+	printf("|====== | Alterando o pedido | =========|");
+	printf("|           3 - Retornar                |");
+	printf("| ======= | Escolha uma opcao | ========| ");
+
+}
+
+int consulta(){
+	int escolha;
+	printf("Seus pedidos: \n");
+	printf("%d %s \n",produto.quantidade, produto.nome);
+	printf("Pressione 0 para voltar!\n");
+	scanf("%d", &escolha);
+	if(escolha != 0){
+		printf("Informe uma opcao valida!\n");
+		consulta();
+	}else{
+		main();
 	}
 }
